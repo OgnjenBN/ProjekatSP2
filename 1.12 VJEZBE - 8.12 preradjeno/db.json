@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "name": "Petar",
+      "lastName": "Petrović",
+      "age": 20,
+      "city": "Bijeljina"
+    },
+    {
+      "name": "Mara",
+      "lastName": "Marić",
+      "age": 22,
+      "city": "Doboj"
+    },
+    {
+      "name": "Marko",
+      "lastName": "Marković",
+      "age": 21,
+      "city": "Zvornik"
+    },
+    {
+      "name": "Milena",
+      "lastName": "Milenović",
+      "age": 20,
+      "city": "Lopare"
+    },
+    {
+      "id": "test",
+      "name": "Ilija",
+      "lastName": "Grahovac",
+      "city": "Šipovo",
+      "age": "22"
+    },
+    {
+      "id": "test1",
+      "name": "Zoran",
+      "lastName": "Janković",
+      "city": "Prijedor",
+      "age": "23"
+    },
+    {
+      "id": 0.04227266024189058,
+      "name": "Viktor",
+      "lastName": "Stankić",
+      "city": "Bijeljina",
+      "age": "4"
+    }
+  ]
+}
