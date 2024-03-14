@@ -1,0 +1,3 @@
+tinypng - za kompresovanje fotografija na manje piksela
+bootstrap
+unsplash - džaba fotke (nema autorskih prava) 
