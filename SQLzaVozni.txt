@@ -1,0 +1,41 @@
+CREATE TABLE vozila (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marka VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    registracijski_broj VARCHAR(15) NOT NULL UNIQUE,
+    datum_isteka_registracije DATE NOT NULL,
+    godina_proizvodnje INT NOT NULL,
+    tip_goriva ENUM('dizel', 'benzin', 'plin') DEFAULT 'dizel',
+    status ENUM('dostupno', 'u servisu', 'rezervisano') DEFAULT 'dostupno',
+    INDEX idx_marka (marka),
+    INDEX idx_model (model),
+    INDEX idx_registracijski_broj (registracijski_broj)
+);
+
+CREATE TABLE vozaci (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ime VARCHAR(30) NOT NULL,
+    prezime VARCHAR(30) NOT NULL,
+    broj_vozacke_dozvole VARCHAR(15) NOT NULL UNIQUE,
+    datum_isteka_dozvole DATE NOT NULL,
+    kategorije_vozacke_dozvole VARCHAR(15) NOT NULL,
+    kontakt_informacije VARCHAR(100) NOT NULL,
+    ogranicenja_za_voznju VARCHAR(50),
+    status ENUM('aktivno', 'neaktivno') DEFAULT 'aktivno',
+    INDEX idx_ime (ime),
+    INDEX idx_prezime (prezime)
+);
+
+CREATE TABLE radni_nalozi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vozilo_id INT NOT NULL,
+    vozac_id INT NOT NULL,
+    opis_zadatka VARCHAR(100) NOT NULL,
+    datum_i_vrijeme_izdavanja DATETIME,
+    rok_zavrsavanja DATETIME,
+    status ENUM('otvoren', 'u toku', 'zavrsen') DEFAULT 'otvoren',
+    INDEX idx_vozilo_id (vozilo_id),
+    INDEX idx_vozac_id (vozac_id),
+    CONSTRAINT fk_vozilo FOREIGN KEY (vozilo_id) REFERENCES vozila(id),
+    CONSTRAINT fk_vozac FOREIGN KEY (vozac_id) REFERENCES vozaci(id)
+);
