@@ -1,0 +1,11 @@
+CREATE TABLE device_type (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    k_model VARCHAR(255),
+    k_methode_type VARCHAR(255),
+    k_calibration_metode VARCHAR(255),
+    k_calibration_component INT,
+    k_note TEXT,
+    k_low_level_detection INT,
+    k_max_level_detection INT,
+    k_low_negative_accepted INT
+);
