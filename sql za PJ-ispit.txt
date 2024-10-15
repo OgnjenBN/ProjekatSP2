@@ -9,3 +9,5 @@ CREATE TABLE device_type (
     k_max_level_detection INT,
     k_low_negative_accepted INT
 );
+
+pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
